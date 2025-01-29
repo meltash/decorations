@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>FAQs & Policies - Picnics Galore Kenya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;family=Roboto:wght@500&amp;family=Great+Vibes&amp;family=Montserrat:wght@500&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Mobile Menu Styles */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: white;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+    .mobile-menu.active {
+      display: flex;
+    }
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none !important;
+      }
+      .desktop-menu {
+        display: flex;
+      }
+    }
+    /* FAQ Toggle Styles */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+    .faq-answer.open {
+      max-height: 200px; /* Adjust based on content */
+      padding-top: 1rem;
+    }
+  </style>
+  <script>
+    // Toggle Mobile Menu
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('active');
+    }
+
+    // Toggle FAQ Answers
+    function toggleAnswer(id) {
+      const answer = document.getElementById(id);
+      const icon = answer.previousElementSibling.querySelector('i');
+      answer.classList.toggle('open');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    }
+  </script>
+</head>
+<body class="bg-gray-50">
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a class="flex items-center" href="/">
+        <img alt="Picnics Galore Kenya Logo" class="h-10 w-10 mr-2" src="improved lgo.jpg"/>
+        <span class="font-bold text-2xl text-pink-600">Picnics Galore</span>
+      </a>
+      <!-- Desktop Menu -->
+      <nav class="desktop-menu space-x-4 hidden md:flex">
+        <a class="text-base text-gray-700 hover:text-pink-600" href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a class="text-base text-gray-700 hover:text-pink-600" href="packages.html"><i class="fas fa-box"></i> Packages</a>
+        <a class="text-base text-gray-700 hover:text-pink-600" href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+        <a class="text-base text-gray-700 hover:text-pink-600" href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+        <a class="text-base text-gray-700 hover:text-pink-600" href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a>
+        <a class="text-base text-gray-700 hover:text-pink-600" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+      <!-- Hamburger Menu Button -->
+      <button class="md:hidden text-gray-700 hover:text-pink-600" onclick="toggleMenu()">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="mobile-menu">
+      <a class="text-base text-gray-700 hover:text-pink-600 p-2" href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a class="text-base text-gray-700 hover:text-pink-600 p-2" href="packages.html"><i class="fas fa-box"></i> Packages</a>
+      <a class="text-base text-gray-700 hover:text-pink-600 p-2" href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+      <a class="text-base text-gray-700 hover:text-pink-600 p-2" href="events.html"><i class="fas fa-calendar-alt"></i> Events</a>
+      <a class="text-base text-gray-700 hover:text-pink-600 p-2" href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a>
+      <a class="text-base text-gray-700 hover:text-pink-600 p-2" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+  <!-- FAQs & Policies Section -->
+  <section class="py-16 bg-white text-center mt-16">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">FAQs & Policies</h2>
+    <div class="max-w-4xl mx-auto">
+      <!-- FAQ 1 -->
+      <div class="bg-gray-100 shadow-lg rounded-lg p-6 mb-6">
+        <button class="w-full text-left text-2xl font-semibold text-gray-700 flex justify-between items-center focus:outline-none" onclick="toggleAnswer('answer1')">
+          1. What is included in the picnic packages?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer" id="answer1">
+          <p class="mt-2 text-gray-600">Each package includes a picnic table, pillows, napkins, candles, flowers, and more. See individual packages for full details.</p>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="bg-gray-100 shadow-lg rounded-lg p-6 mb-6">
+        <button class="w-full text-left text-2xl font-semibold text-gray-700 flex justify-between items-center focus:outline-none" onclick="toggleAnswer('answer2')">
+          2. How do I book a picnic?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer" id="answer2">
+          <p class="mt-2 text-gray-600">Bookings can be made via the contact form on our website or by calling us at +254722577909.</p>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="bg-gray-100 shadow-lg rounded-lg p-6 mb-6">
+        <button class="w-full text-left text-2xl font-semibold text-gray-700 flex justify-between items-center focus:outline-none" onclick="toggleAnswer('answer3')">
+          3. Do you offer events for corporate functions?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer" id="answer3">
+          <p class="mt-2 text-gray-600">Yes, we offer tailored event setups for corporate functions, meetings, and more.</p>
+        </div>
+      </div>
+      <!-- FAQ 4 -->
+      <div class="bg-gray-100 shadow-lg rounded-lg p-6 mb-6">
+        <button class="w-full text-left text-2xl font-semibold text-gray-700 flex justify-between items-center focus:outline-none" onclick="toggleAnswer('answer4')">
+          4. What is your deposit policy?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer" id="answer4">
+          <p class="mt-2 text-gray-600">A 75% deposit is required to confirm the booking. The balance must be paid immediately after the setup is complete.</p>
+        </div>
+      </div>
+      <!-- FAQ 5 -->
+      <div class="bg-gray-100 shadow-lg rounded-lg p-6 mb-6">
+        <button class="w-full text-left text-2xl font-semibold text-gray-700 flex justify-between items-center focus:outline-none" onclick="toggleAnswer('answer5')">
+          5. What is your cancellation policy?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer" id="answer5">
+          <p class="mt-2 text-gray-600">No cancellations or refunds are allowed. It is only possible to reschedule 48-72 hours prior to the setup. Alterations or changes are not allowed unless notified 72 hours early.</p>
+        </div>
+      </div>
+      <!-- FAQ 6 -->
+      <div class="bg-gray-100 shadow-lg rounded-lg p-6 mb-6">
+        <button class="w-full text-left text-2xl font-semibold text-gray-700 flex justify-between items-center focus:outline-none" onclick="toggleAnswer('answer6')">
+          6. What happens in case of damages or breakages?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer" id="answer6">
+          <p class="mt-2 text-gray-600">Any damages or breakages of equipment must be paid for by the client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="text-center">
+      <p>© 2025 Picnics Galore Kenya. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
