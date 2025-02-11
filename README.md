@@ -7,7 +7,7 @@ This project uses **HTML**, **Tailwind CSS**, and **JavaScript** to create a res
 ## 🌐 Demo
 
 Check out the live demo of the website here:  
-[Live Demo](https://yourwebsite.com)
+[Live Demo](https://decorations-iota.vercel.app/)
 
 ## 🛠️ Technologies Used
 
